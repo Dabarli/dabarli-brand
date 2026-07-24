@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dabarli — Brand Identity Guidelines</title>
+  <meta name="description" content="Official Dabarli brand identity guidelines: logo, color, lockups, and usage." />
+  <link rel="icon" href="svg/dabarli-favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --leaf: #51B64A;
+      --leaf-deep: #3D9137;
+      --leaf-darker: #2D6B29;
+      --leaf-bright: #6FD166;
+      --mist: #F7FBF6;
+      --mist-2: #EEF6ED;
+      --border: #D5E3D4;
+      --ink: #1A1A1A;
+      --slate: #5C5C5C;
+      --muted: #6B6B6B;
+      --night: #121212;
+      --night-2: #1E1E1E;
+      --paper: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Manrope, system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(81, 182, 74, 0.16), transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, rgba(61, 145, 55, 0.10), transparent 50%),
+        var(--mist);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 28px 120px; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(247, 251, 246, 0.82);
+      border-bottom: 1px solid rgba(213, 227, 212, 0.85);
+    }
+    .nav-inner {
+      max-width: 1080px; margin: 0 auto; padding: 14px 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; }
+    .nav-brand img { width: 28px; height: 22px; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; font-weight: 600; color: var(--slate); }
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { color: var(--leaf-deep); }
+
+    .hero {
+      min-height: min(88vh, 780px);
+      display: grid;
+      align-content: center;
+      padding: 72px 0 48px;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute; inset: auto 0 -1px 0; height: 120px;
+      background: linear-gradient(to bottom, transparent, rgba(247,251,246,0.95));
+      pointer-events: none;
+    }
+    .eyebrow {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--leaf-deep); margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: Syne, Manrope, sans-serif;
+      font-size: clamp(48px, 9vw, 88px);
+      font-weight: 800; letter-spacing: -0.04em; line-height: 0.95;
+      margin: 0 0 18px;
+    }
+    .hero-lead {
+      font-size: clamp(16px, 2.2vw, 20px);
+      color: var(--slate); max-width: 40ch; margin: 0 0 28px;
+    }
+    .hero-mark {
+      width: min(220px, 48vw); margin: 8px 0 28px;
+      filter: drop-shadow(0 18px 40px rgba(45, 107, 41, 0.18));
+      animation: rise 900ms cubic-bezier(.2,.8,.2,1) both;
+    }
+    .hero h1 { animation: rise 800ms cubic-bezier(.2,.8,.2,1) both; }
+    .hero-lead { animation: rise 950ms cubic-bezier(.2,.8,.2,1) both; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; animation: rise 1100ms cubic-bezier(.2,.8,.2,1) both; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 11px 18px; border-radius: 999px; text-decoration: none;
+      font-size: 13px; font-weight: 700; border: 1px solid transparent;
+      transition: transform .15s ease, background .15s ease, color .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--leaf-deep); color: #fff; }
+    .btn-primary:hover { background: var(--leaf-darker); }
+    .btn-ghost { border-color: var(--border); background: rgba(255,255,255,0.55); color: var(--ink); }
+    .btn-ghost:hover { border-color: var(--leaf-deep); color: var(--leaf-deep); }
+
+    .section { padding: 64px 0 8px; border-top: 1px solid var(--border); margin-top: 40px; }
+    .section:first-of-type { border-top: 0; margin-top: 0; }
+    .kicker {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--leaf-deep); margin-bottom: 10px;
+    }
+    h2 {
+      font-family: Syne, Manrope, sans-serif;
+      font-size: clamp(26px, 4vw, 34px); font-weight: 700;
+      letter-spacing: -0.03em; margin: 0 0 10px; line-height: 1.15;
+    }
+    h3 { font-size: 15px; font-weight: 700; margin: 0 0 4px; }
+    p { margin: 0 0 12px; max-width: 68ch; }
+    .muted { color: var(--slate); }
+    .small { font-size: 13px; }
+
+    .grid { display: grid; gap: 18px; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 900px) {
+      .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 560px) {
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    }
+
+    .tile {
+      border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+      background: rgba(255,255,255,0.72); backdrop-filter: blur(6px);
+    }
+    .tile-stage {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 180px; padding: 28px; position: relative;
+    }
+    .tile-meta { border-top: 1px solid var(--border); padding: 12px 14px 14px; background: #fff; }
+    .tile-meta p { font-size: 12px; color: var(--slate); margin: 0; }
+
+    .bg-mist { background: var(--mist); }
+    .bg-paper { background: #fff; }
+    .bg-night { background: var(--night); }
+    .bg-leaf { background: linear-gradient(145deg, var(--leaf-deep), var(--leaf)); }
+    .bg-busy {
+      background:
+        linear-gradient(135deg, rgba(26,26,26,.55), rgba(26,26,26,.35)),
+        radial-gradient(circle at 20% 30%, #6fd166 0 12%, transparent 13%),
+        radial-gradient(circle at 80% 70%, #3d9137 0 18%, transparent 19%),
+        #2a2a2a;
+    }
+
+    .download-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .download {
+      display: inline-block; padding: 5px 12px;
+      border: 1px solid var(--ink); border-radius: 999px;
+      color: var(--ink); text-decoration: none;
+      font-size: 12px; font-weight: 700; background: transparent;
+    }
+    .download:hover { background: var(--ink); color: #fff; }
+    .download.leaf { border-color: var(--leaf-deep); color: var(--leaf-deep); }
+    .download.leaf:hover { background: var(--leaf-deep); color: #fff; }
+
+    .mark { display: block; width: 96px; height: auto; }
+    .mark-lg { width: 120px; }
+    .lockup { display: flex; align-items: center; gap: 16px; }
+    .lockup img { width: 64px; height: auto; }
+    .wordmark {
+      font-family: Manrope, sans-serif; font-weight: 800;
+      font-size: 34px; letter-spacing: -0.03em; white-space: nowrap;
+    }
+    .lockup-stacked { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+    .arabic {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      font-size: 28px; font-weight: 700; letter-spacing: 0.04em;
+    }
+
+    .swatch-chip { height: 88px; border-radius: 12px; border: 1px solid var(--border); }
+    .swatch h3 { margin-top: 10px; }
+    .swatch p { font-size: 12px; color: var(--slate); margin: 0; }
+    .swatch code {
+      display: inline-block; margin-top: 4px;
+      font-family: ui-monospace, Consolas, monospace; font-size: 12px;
+      background: var(--mist-2); padding: 2px 7px; border-radius: 6px;
+    }
+
+    ul.rules { list-style: none; padding: 0; margin: 8px 0 0; max-width: 68ch; }
+    ul.rules li {
+      padding: 8px 0 8px 28px; position: relative;
+      border-bottom: 1px solid var(--border); font-size: 14px;
+    }
+    ul.rules li:last-child { border-bottom: 0; }
+    ul.rules li::before { position: absolute; left: 2px; font-weight: 800; }
+    ul.do li::before { content: "+"; color: var(--leaf-deep); }
+    ul.dont li::before { content: "×"; color: #c0392b; }
+
+    .badge {
+      position: absolute; top: 12px; left: 12px;
+      font-size: 11px; font-weight: 800; letter-spacing: 0.08em; color: #c0392b;
+    }
+    .fx-stretch { transform: scaleX(1.45); }
+    .fx-rotate { transform: rotate(90deg); }
+    .fx-shadow { filter: drop-shadow(4px 8px 10px rgba(0,0,0,0.4)); }
+    .fx-outline { fill: none !important; stroke: var(--ink); stroke-width: 3; }
+    .fx-blue path { fill: #0860B0 !important; }
+
+    .scale-strip {
+      display: flex; align-items: flex-end; gap: 36px; flex-wrap: wrap;
+      padding: 28px 24px; border: 1px solid var(--border); border-radius: 16px; background: #fff;
+    }
+    .scale-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .scale-item span { font-size: 12px; color: var(--slate); }
+
+    table { border-collapse: collapse; width: 100%; max-width: 720px; font-size: 14px; margin-top: 16px; }
+    th, td { text-align: left; padding: 10px 14px 10px 0; border-bottom: 1px solid var(--border); }
+    th {
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--slate); font-weight: 700;
+    }
+    code.inline {
+      font-family: ui-monospace, Consolas, monospace; font-size: 0.9em;
+      background: var(--mist-2); padding: 1px 6px; border-radius: 4px;
+    }
+
+    .split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: start; }
+    @media (max-width: 800px) { .split { grid-template-columns: 1fr; } }
+
+    .diagram {
+      border: 1px solid var(--border); border-radius: 16px; background: #fff; padding: 22px;
+    }
+    .clearspace-demo {
+      display: grid; place-items: center; min-height: 220px;
+      background:
+        linear-gradient(to right, transparent 18px, rgba(61,145,55,0.18) 18px, rgba(61,145,55,0.18) 19px, transparent 19px),
+        linear-gradient(to left, transparent 18px, rgba(61,145,55,0.18) 18px, rgba(61,145,55,0.18) 19px, transparent 19px),
+        linear-gradient(to bottom, transparent 18px, rgba(61,145,55,0.18) 18px, rgba(61,145,55,0.18) 19px, transparent 19px),
+        linear-gradient(to top, transparent 18px, rgba(61,145,55,0.18) 18px, rgba(61,145,55,0.18) 19px, transparent 19px),
+        var(--mist);
+      border-radius: 12px; position: relative;
+    }
+    .clearspace-demo span {
+      position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+      font-size: 11px; font-weight: 700; color: var(--leaf-deep); letter-spacing: 0.08em;
+    }
+
+    footer {
+      margin-top: 72px; padding-top: 28px; border-top: 1px solid var(--border);
+      display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;
+      color: var(--slate); font-size: 13px;
+    }
+    footer a { color: var(--leaf-deep); font-weight: 700; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#">
+        <img src="svg/dabarli-mark-light.svg" alt="" />
+        <span>Dabarli Brand</span>
+      </a>
+      <div class="nav-links">
+        <a href="#idea">Idea</a>
+        <a href="#variants">Variants</a>
+        <a href="#lockups">Lockups</a>
+        <a href="#color">Color</a>
+        <a href="#type">Type</a>
+        <a href="#rules">Rules</a>
+        <a href="#assets">Assets</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="hero">
+      <p class="eyebrow">Brand Identity Guidelines · v1.0 · July 2026</p>
+      <img class="hero-mark" src="svg/dabarli-mark-light.svg" alt="Dabarli mark" />
+      <h1>Dabarli</h1>
+      <p class="hero-lead">
+        Two people side by side — opportunity meets effort. The mark is the marketplace:
+        workers and providers, connected.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="svg/dabarli-lockup-horizontal-light.svg" download>Download lockup</a>
+        <a class="btn btn-ghost" href="#assets">All assets</a>
+      </div>
+    </header>
+
+    <section class="section" id="idea">
+      <p class="kicker">01 — Brand idea</p>
+      <h2>Connection is the product</h2>
+      <div class="split">
+        <div>
+          <p>
+            Dabarli is Tunisia’s flexible work and gig marketplace. The symbol shows two stylized figures
+            overlapping at the shoulder — not a crowd, not a corporation, but a handshake made visible.
+          </p>
+          <p class="muted">
+            The arch of negative space between them is intentional: room for work to pass through.
+            Protect that void the way you protect the brand name.
+          </p>
+          <ul class="rules do">
+            <li>Green is the only brand hue — light and dark modes share one palette</li>
+            <li>Blue is retired from identity (legacy assets must be replaced)</li>
+            <li>Arabic wordmark <strong>دبرلي</strong> may sit under the mark on splash and local campaigns</li>
+          </ul>
+        </div>
+        <div class="diagram" style="display:grid;place-items:center;min-height:260px;background:var(--night)">
+          <img src="svg/dabarli-mark-dark.svg" alt="Dabarli mark on night" style="width:140px" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="variants">
+      <p class="kicker">02 — Color variants</p>
+      <h2>Four approved marks, no others</h2>
+      <p class="muted">Flat solids only. Tint with the green system — never invent a fifth color.</p>
+
+      <div class="grid grid-2" style="margin-top:22px">
+        <article class="tile">
+          <div class="tile-stage bg-mist">
+            <img class="mark mark-lg" src="svg/dabarli-mark-light.svg" alt="Light mark" />
+          </div>
+          <div class="tile-meta">
+            <h3>Light</h3>
+            <p>Leaf Deep on Mist / Paper — default for light UI</p>
+            <div class="download-row">
+              <a class="download leaf" href="svg/dabarli-mark-light.svg" download>SVG</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile">
+          <div class="tile-stage bg-night">
+            <img class="mark mark-lg" src="svg/dabarli-mark-dark.svg" alt="Dark mark" />
+          </div>
+          <div class="tile-meta">
+            <h3>Dark / reversed</h3>
+            <p>Leaf on Night — dark mode, splash, night placements</p>
+            <div class="download-row">
+              <a class="download leaf" href="svg/dabarli-mark-dark.svg" download>SVG</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile">
+          <div class="tile-stage bg-paper">
+            <img class="mark mark-lg" src="svg/dabarli-mark-mono.svg" alt="Mono mark" />
+          </div>
+          <div class="tile-meta">
+            <h3>Monochrome</h3>
+            <p>Ink for single-ink print, engraving, legal docs</p>
+            <div class="download-row">
+              <a class="download" href="svg/dabarli-mark-mono.svg" download>SVG</a>
+              <a class="download" href="svg/dabarli-mark-white.svg" download>White SVG</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile">
+          <div class="tile-stage bg-leaf">
+            <img class="mark mark-lg" src="svg/dabarli-mark-on-leaf.svg" alt="On leaf mark" />
+          </div>
+          <div class="tile-meta">
+            <h3>On Leaf</h3>
+            <p>Mist mark on brand-green fields — merch, events, CTAs</p>
+            <div class="download-row">
+              <a class="download leaf" href="svg/dabarli-mark-on-leaf.svg" download>SVG</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="profiles">
+      <p class="kicker">03 — Social &amp; app</p>
+      <h2>Profiles and product icon</h2>
+      <p class="muted">Prefer the dark app icon for LinkedIn / Instagram company logos.</p>
+      <div class="grid grid-3" style="margin-top:22px">
+        <article class="tile">
+          <div class="tile-stage bg-night" style="min-height:220px">
+            <img src="svg/dabarli-app-icon.svg" alt="App icon" style="width:120px;border-radius:28px" />
+          </div>
+          <div class="tile-meta">
+            <h3>App icon</h3>
+            <p>Night tile · Leaf mark · recommended default</p>
+            <div class="download-row">
+              <a class="download leaf" href="svg/dabarli-app-icon.svg" download>SVG</a>
+            </div>
+          </div>
+        </article>
+        <article class="tile">
+          <div class="tile-stage bg-mist" style="min-height:220px">
+            <div style="width:120px;height:120px;border-radius:28px;background:#fff;border:1px solid var(--border);display:grid;place-items:center">
+              <img src="svg/dabarli-mark-light.svg" alt="" style="width:72px" />
+            </div>
+          </div>
+          <div class="tile-meta">
+            <h3>Profile — light</h3>
+            <p>Mist field · Leaf Deep mark</p>
+          </div>
+        </article>
+        <article class="tile">
+          <div class="tile-stage bg-leaf" style="min-height:220px">
+            <div style="width:120px;height:120px;border-radius:28px;background:rgba(255,255,255,0.08);display:grid;place-items:center">
+              <img src="svg/dabarli-mark-on-leaf.svg" alt="" style="width:72px" />
+            </div>
+          </div>
+          <div class="tile-meta">
+            <h3>Profile — Leaf</h3>
+            <p>Bold presence for campaigns</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="lockups">
+      <p class="kicker">04 — Lockups</p>
+      <h2>Symbol, horizontal, stacked</h2>
+      <div class="grid grid-2" style="margin-top:22px">
+        <article class="tile">
+          <div class="tile-stage bg-mist">
+            <div class="lockup">
+              <img src="svg/dabarli-mark-light.svg" alt="" />
+              <span class="wordmark" style="color:var(--leaf-deep)">Dabarli</span>
+            </div>
+          </div>
+          <div class="tile-meta">
+            <h3>Horizontal — light</h3>
+            <p>Websites, dashboards, docs, email</p>
+            <div class="download-row">
+              <a class="download leaf" href="svg/dabarli-lockup-horizontal-light.svg" download>SVG light</a>
+              <a class="download leaf" href="svg/dabarli-lockup-horizontal-dark.svg" download>SVG dark</a>
+            </div>
+          </div>
+        </article>
+        <article class="tile">
+          <div class="tile-stage bg-night">
+            <div class="lockup">
+              <img src="svg/dabarli-mark-dark.svg" alt="" />
+              <span class="wordmark" style="color:#fff">Dabarli</span>
+            </div>
+          </div>
+          <div class="tile-meta">
+            <h3>Horizontal — dark</h3>
+            <p>Leaf mark + Paper wordmark</p>
+          </div>
+        </article>
+        <article class="tile">
+          <div class="tile-stage bg-mist">
+            <div class="lockup-stacked">
+              <img src="svg/dabarli-mark-light.svg" alt="" style="width:72px" />
+              <span class="wordmark" style="color:var(--leaf-deep);font-size:28px">Dabarli</span>
+            </div>
+          </div>
+          <div class="tile-meta">
+            <h3>Stacked</h3>
+            <p>Square placements, posters, splash alternatives</p>
+          </div>
+        </article>
+        <article class="tile">
+          <div class="tile-stage bg-night">
+            <div class="lockup-stacked">
+              <img src="svg/dabarli-mark-dark.svg" alt="" style="width:72px" />
+              <span class="arabic" style="color:#fff">دبرلي</span>
+              <span style="width:40px;height:2px;background:var(--leaf);border-radius:2px;margin-top:2px"></span>
+            </div>
+          </div>
+          <div class="tile-meta">
+            <h3>Splash / Arabic</h3>
+            <p>Night · Leaf mark · Arabic wordmark · accent line</p>
+          </div>
+        </article>
+      </div>
+      <p class="small muted" style="margin-top:16px">
+        On light lockups the wordmark is Leaf Deep. On dark lockups the wordmark is white — only the symbol carries Leaf.
+      </p>
+    </section>
+
+    <section class="section" id="type">
+      <p class="kicker">05 — Typography</p>
+      <h2>Geometric, friendly, clear</h2>
+      <p>
+        Product UI uses the app type stack. This guide uses <strong>Syne</strong> for display titles and
+        <strong>Manrope</strong> for body and the Latin wordmark proxy.
+      </p>
+      <ul class="rules do">
+        <li>Wordmark casing is sentence case: <em>Dabarli</em> — never all-caps</li>
+        <li>Keep Latin and Arabic wordmarks visually balanced; don’t stretch either</li>
+        <li>UI weights 400–700; headlines may use 800</li>
+      </ul>
+      <div class="diagram" style="margin-top:18px">
+        <div style="font-family:Syne,sans-serif;font-weight:800;font-size:42px;letter-spacing:-0.03em">Dabarli</div>
+        <div class="muted small" style="margin-top:6px">Display — Syne 800</div>
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:28px;margin-top:22px;letter-spacing:-0.02em">Find work. Offer work. Move.</div>
+        <div class="muted small" style="margin-top:6px">Body / UI — Manrope 400–700</div>
+      </div>
+    </section>
+
+    <section class="section" id="color">
+      <p class="kicker">06 — Color</p>
+      <h2>Green structure, mist space, night rest</h2>
+      <p class="muted">
+        Blue is out of the identity. Leaf carries attention; Mist and Night carry surfaces.
+        Ratio target: ~55% Mist/Night surfaces · 35% Ink text · 10% Leaf accents.
+      </p>
+      <div class="grid grid-3" style="margin-top:22px">
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#3D9137"></div>
+          <h3>Leaf Deep</h3>
+          <p>Primary on light · marks · CTAs</p>
+          <code>#3D9137</code>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#51B64A"></div>
+          <h3>Leaf</h3>
+          <p>Primary on dark · accent shapes</p>
+          <code>#51B64A</code>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#2D6B29"></div>
+          <h3>Leaf Darker</h3>
+          <p>Pressed states · deep emphasis</p>
+          <code>#2D6B29</code>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#F7FBF6"></div>
+          <h3>Mist</h3>
+          <p>Light app background</p>
+          <code>#F7FBF6</code>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#121212"></div>
+          <h3>Night</h3>
+          <p>Dark surfaces · splash</p>
+          <code>#121212</code>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#1A1A1A"></div>
+          <h3>Ink</h3>
+          <p>Text · mono mark</p>
+          <code>#1A1A1A</code>
+        </div>
+      </div>
+      <p class="small muted" style="margin-top:16px">
+        Support: Mist 2 <code class="inline">#EEF6ED</code> · Border <code class="inline">#D5E3D4</code> ·
+        Slate <code class="inline">#5C5C5C</code> · Leaf Bright <code class="inline">#6FD166</code> (dark mode hover only).
+      </p>
+    </section>
+
+    <section class="section" id="clearspace">
+      <p class="kicker">07 — Clear space &amp; minimums</p>
+      <h2>Give the pair room to breathe</h2>
+      <div class="split" style="margin-top:18px">
+        <div class="clearspace-demo">
+          <span>CLEAR = 0.5× mark height</span>
+          <img src="svg/dabarli-mark-light.svg" alt="" style="width:100px" />
+        </div>
+        <div>
+          <table>
+            <thead>
+              <tr><th>Asset</th><th>Digital min</th><th>Print min</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Symbol</td><td>18 px</td><td>6 mm</td></tr>
+              <tr><td>Horizontal lockup</td><td>96 px</td><td>28 mm</td></tr>
+              <tr><td>Stacked lockup</td><td>72 px</td><td>20 mm</td></tr>
+            </tbody>
+          </table>
+          <p class="small muted" style="margin-top:14px">
+            Clear space equals half the mark height on all sides. Nothing enters the gap between the figures.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="scale">
+      <p class="kicker">08 — Scale</p>
+      <h2>One geometry at every size</h2>
+      <p class="muted">No simplified small-size redraw — the same paths serve favicon to billboard.</p>
+      <div class="scale-strip" style="margin-top:18px">
+        <div class="scale-item"><img src="svg/dabarli-mark-light.svg" width="96" alt="" /><span>96</span></div>
+        <div class="scale-item"><img src="svg/dabarli-mark-light.svg" width="64" alt="" /><span>64</span></div>
+        <div class="scale-item"><img src="svg/dabarli-mark-light.svg" width="32" alt="" /><span>32</span></div>
+        <div class="scale-item"><img src="svg/dabarli-mark-light.svg" width="24" alt="" /><span>24</span></div>
+        <div class="scale-item"><img src="svg/dabarli-mark-light.svg" width="16" alt="" /><span>16</span></div>
+        <div class="scale-item"><img src="svg/dabarli-favicon.svg" width="32" alt="" /><span>Favicon</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="rules">
+      <p class="kicker">09 — Incorrect usage</p>
+      <h2>Never</h2>
+      <div class="grid grid-4" style="margin-top:22px">
+        <article class="tile">
+          <div class="tile-stage bg-mist"><span class="badge">✕</span>
+            <img class="mark fx-blue" src="svg/dabarli-mark.svg" alt="" style="width:72px;color:#0860B0" />
+          </div>
+          <div class="tile-meta"><h3>Blue / old colors</h3><p>Green identity only</p></div>
+        </article>
+        <article class="tile">
+          <div class="tile-stage bg-mist"><span class="badge">✕</span>
+            <img class="mark fx-stretch" src="svg/dabarli-mark-light.svg" alt="" style="width:72px" />
+          </div>
+          <div class="tile-meta"><h3>Stretched</h3><p>Proportions are locked</p></div>
+        </article>
+        <article class="tile">
+          <div class="tile-stage bg-mist"><span class="badge">✕</span>
+            <img class="mark fx-rotate" src="svg/dabarli-mark-light.svg" alt="" style="width:72px" />
+          </div>
+          <div class="tile-meta"><h3>Rotated</h3><p>Keep upright</p></div>
+        </article>
+        <article class="tile">
+          <div class="tile-stage bg-mist"><span class="badge">✕</span>
+            <img class="mark fx-shadow" src="svg/dabarli-mark-light.svg" alt="" style="width:72px" />
+          </div>
+          <div class="tile-meta"><h3>Effects</h3><p>No shadows, glows, 3D</p></div>
+        </article>
+        <article class="tile">
+          <div class="tile-stage bg-mist"><span class="badge">✕</span>
+            <svg class="mark" viewBox="0 0 130 100" width="72" aria-hidden="true">
+              <defs>
+                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#51B64A"/><stop offset="100%" stop-color="#0860B0"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#g)" d="M43.19,87.60 C43.76,76.71 47.53,68.63 55.57,61.02 C61.97,54.97 62.02,55.08 51.50,51.79 C43.42,49.27 32.60,48.91 26.50,50.96 C12.36,55.73 4.00,69.34 4.00,87.59 L4.00,96.00 L23.37,96.00 L42.75,96.00 L43.19,87.60 Z M81.82,87.25 C81.34,77.24 78.65,70.99 72.02,64.51 C68.35,60.93 68.16,60.87 65.37,62.33 C61.30,64.47 55.60,70.73 52.94,76.00 C51.37,79.10 50.53,82.90 50.21,88.25 L49.74,96.00 L65.99,96.00 L82.24,96.00 L81.82,87.25 Z M126.00,87.16 C126.00,82.30 125.37,76.21 124.59,73.64 C121.33,62.79 112.42,53.40 102.60,50.46 C95.01,48.19 83.59,48.43 76.70,51.01 C73.57,52.18 71.00,53.30 71.00,53.49 C71.00,53.68 73.62,56.46 76.81,59.67 C85.26,68.14 88.32,75.02 88.83,86.69 L89.24,96.00 L107.62,96.00 L126.00,96.00 L126.00,87.16 Z M42.28,42.94 C46.56,41.75 52.44,36.99 54.47,33.07 C58.17,25.90 57.10,17.47 51.72,11.33 C45.86,4.66 37.65,2.45 30.22,5.55 C16.50,11.28 13.21,27.26 23.59,37.65 C29.37,43.43 34.89,44.99 42.28,42.94 Z M102.10,41.43 C108.07,38.38 113.02,29.99 112.97,23.00 C112.95,19.77 109.87,13.15 106.98,10.14 C105.73,8.84 102.86,6.93 100.61,5.91 C87.95,0.16 74.00,9.65 74.00,24.00 C74.00,38.57 89.23,48.02 102.10,41.43 Z"/>
+            </svg>
+          </div>
+          <div class="tile-meta"><h3>Gradients</h3><p>Flat solids only</p></div>
+        </article>
+        <article class="tile">
+          <div class="tile-stage bg-mist"><span class="badge">✕</span>
+            <svg class="mark" viewBox="0 0 130 100" width="72" aria-hidden="true">
+              <path class="fx-outline" d="M43.19,87.60 C43.76,76.71 47.53,68.63 55.57,61.02 C61.97,54.97 62.02,55.08 51.50,51.79 C43.42,49.27 32.60,48.91 26.50,50.96 C12.36,55.73 4.00,69.34 4.00,87.59 L4.00,96.00 L23.37,96.00 L42.75,96.00 L43.19,87.60 Z M81.82,87.25 C81.34,77.24 78.65,70.99 72.02,64.51 C68.35,60.93 68.16,60.87 65.37,62.33 C61.30,64.47 55.60,70.73 52.94,76.00 C51.37,79.10 50.53,82.90 50.21,88.25 L49.74,96.00 L65.99,96.00 L82.24,96.00 L81.82,87.25 Z M126.00,87.16 C126.00,82.30 125.37,76.21 124.59,73.64 C121.33,62.79 112.42,53.40 102.60,50.46 C95.01,48.19 83.59,48.43 76.70,51.01 C73.57,52.18 71.00,53.30 71.00,53.49 C71.00,53.68 73.62,56.46 76.81,59.67 C85.26,68.14 88.32,75.02 88.83,86.69 L89.24,96.00 L107.62,96.00 L126.00,96.00 L126.00,87.16 Z M42.28,42.94 C46.56,41.75 52.44,36.99 54.47,33.07 C58.17,25.90 57.10,17.47 51.72,11.33 C45.86,4.66 37.65,2.45 30.22,5.55 C16.50,11.28 13.21,27.26 23.59,37.65 C29.37,43.43 34.89,44.99 42.28,42.94 Z M102.10,41.43 C108.07,38.38 113.02,29.99 112.97,23.00 C112.95,19.77 109.87,13.15 106.98,10.14 C105.73,8.84 102.86,6.93 100.61,5.91 C87.95,0.16 74.00,9.65 74.00,24.00 C74.00,38.57 89.23,48.02 102.10,41.43 Z"/>
+            </svg>
+          </div>
+          <div class="tile-meta"><h3>Outlined</h3><p>Solid mass, not a stroke</p></div>
+        </article>
+        <article class="tile">
+          <div class="tile-stage bg-busy"><span class="badge">✕</span>
+            <img class="mark" src="svg/dabarli-mark-mono.svg" alt="" style="width:72px;opacity:.35" />
+          </div>
+          <div class="tile-meta"><h3>Low contrast</h3><p>Use Leaf / white / reversed</p></div>
+        </article>
+        <article class="tile">
+          <div class="tile-stage bg-mist"><span class="badge">✕</span>
+            <div style="position:relative;width:72px;height:56px">
+              <img src="svg/dabarli-mark-light.svg" alt="" style="width:72px" />
+              <div style="position:absolute;inset:35% 20% 20% 20%;background:#fff;border:2px solid #c0392b"></div>
+            </div>
+          </div>
+          <div class="tile-meta"><h3>Filled gap</h3><p>Keep the void between figures</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="assets">
+      <p class="kicker">10 — Assets &amp; naming</p>
+      <h2>File naming convention</h2>
+      <p><code class="inline">dabarli-[asset]-[variant].[format]</code></p>
+      <table>
+        <thead>
+          <tr><th>File</th><th>Use</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code class="inline">svg/dabarli-mark-*.svg</code></td><td>Vector mark masters</td></tr>
+          <tr><td><code class="inline">svg/dabarli-lockup-horizontal-{light,dark}.svg</code></td><td>Default lockups</td></tr>
+          <tr><td><code class="inline">svg/dabarli-app-icon.svg</code></td><td>App / social icon</td></tr>
+          <tr><td><code class="inline">svg/dabarli-favicon.svg</code></td><td>Browser favicon</td></tr>
+          <tr><td><code class="inline">svg/dabarli-mark.svg</code></td><td><code class="inline">currentColor</code> tintable mark</td></tr>
+        </tbody>
+      </table>
+      <div class="cta-row" style="margin-top:22px">
+        <a class="btn btn-primary" href="https://github.com/Dabarli/dabarli-brand" target="_blank" rel="noreferrer">GitHub repo</a>
+        <a class="btn btn-ghost" href="svg/dabarli-mark-light.svg" download>Mark light SVG</a>
+        <a class="btn btn-ghost" href="svg/dabarli-mark-dark.svg" download>Mark dark SVG</a>
+      </div>
+    </section>
+
+    <footer>
+      <div>© Dabarli · Brand Identity Guidelines v1.0</div>
+      <div>
+        Inspired in structure by
+        <a href="https://ladstv.github.io/ladstv-brand/" target="_blank" rel="noreferrer">LADS TV brand</a>
+        · Hosted on GitHub Pages
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
