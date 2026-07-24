@@ -14,18 +14,24 @@ Official brand guidelines and logo assets for **Dabarli** — Tunisia’s flexib
 ## Assets
 
 ```
-svg/dabarli-mark.svg                 # currentColor
-svg/dabarli-mark-light.svg           # Leaf Deep
-svg/dabarli-mark-dark.svg            # Leaf
-svg/dabarli-mark-mono.svg            # Ink
-svg/dabarli-mark-on-leaf.svg         # Mist on green fields
-svg/dabarli-mark-white.svg           # White
-svg/dabarli-lockup-horizontal-*.svg  # Light / dark lockups
-svg/dabarli-app-icon.svg
-svg/dabarli-favicon.svg
+svg/                          # Vector masters
+png/                          # Transparent + composited PNGs @ 256 / 512 / 1024
+jpg/                          # Solid-background JPGs @ 256 / 512 / 1024
 ```
 
-Naming: `dabarli-[asset]-[variant].[format]`
+Naming: `dabarli-[asset]-[variant]-[size].[format]`
+
+Examples:
+- `png/dabarli-mark-light-1024.png` — transparent mark
+- `jpg/dabarli-profile-dark-1024.jpg` — social profile square
+- `png/dabarli-lockup-horizontal-light-512.png` — horizontal lockup
+
+## Generate rasters
+
+```bash
+npm install
+npm run generate
+```
 
 ## Local preview
 
