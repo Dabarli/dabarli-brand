@@ -1,25 +1,35 @@
 {
   "name": "dabarli-brand",
   "version": "1.0.0",
-  "description": "Official brand guidelines and logo assets for **Dabarli** — Tunisia’s flexible work and gig marketplace.",
+  "description": "Official brand guidelines and logo assets for Dabarli — Tunisia flexible work marketplace.",
   "main": "index.js",
   "scripts": {
     "generate": "node scripts/generate-rasters.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dabarli/dabarli-brand.git"
+    "url": "https://github.com/Dabarli/dabarli-brand.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "dabarli",
+    "brand",
+    "logo",
+    "design-system",
+    "tunisia"
+  ],
+  "author": "Dabarli <hello@dabarli.app>",
+  "license": "UNLICENSED",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Dabarli/dabarli-brand/issues"
   },
-  "homepage": "https://github.com/Dabarli/dabarli-brand#readme",
+  "homepage": "https://dabarli.github.io/dabarli-brand/",
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",
     "sharp": "^0.35.3"
+  },
+  "private": false,
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
