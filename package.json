@@ -4,7 +4,8 @@
   "description": "Official brand guidelines and logo assets for Dabarli — Tunisia flexible work marketplace.",
   "main": "index.js",
   "scripts": {
-    "generate": "node scripts/generate-rasters.js"
+    "generate:ar": "node scripts/generate-ar-lockups.js",
+    "generate": "node scripts/generate-ar-lockups.js && node scripts/generate-rasters.js"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,8 @@
   "private": false,
   "engines": {
     "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "fontkit": "^2.0.4"
   }
 }

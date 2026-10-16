@@ -25,8 +25,14 @@ Examples:
 - `png/dabarli-mark-light-1024.png` — transparent mark
 - `jpg/dabarli-profile-dark-1024.jpg` — social profile square
 - `png/dabarli-lockup-horizontal-light-512.png` — horizontal lockup
+- `svg/dabarli-lockup-horizontal-ar-light.svg` — Arabic horizontal (outlined دبرلي)
+- `svg/dabarli-lockup-stacked-ar-dark.svg` — Arabic stacked splash
+
+Type: **Syne** (display) · **Manrope** (Latin) · **Cairo** (Arabic)
 
 ## Generate rasters
+
+Place `NotoSansArabic-Bold.ttf` in `scripts/tmp-brand/` first (for Arabic path outlining), then:
 
 ```bash
 npm install

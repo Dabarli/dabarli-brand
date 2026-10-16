@@ -166,6 +166,26 @@ async function main() {
     "#FFFFFF"
   );
 
+  // Arabic horizontal lockups (outlined SVG masters — run generate-ar-lockups first)
+  for (const size of SIZES) {
+    for (const [svgFile, baseName, bg] of [
+      ["dabarli-lockup-horizontal-ar-light.svg", "dabarli-lockup-horizontal-ar-light", COLORS.mist],
+      ["dabarli-lockup-horizontal-ar-dark.svg", "dabarli-lockup-horizontal-ar-dark", COLORS.night],
+    ]) {
+      if (!fs.existsSync(path.join(SVG, svgFile))) continue;
+      const buf = renderSvgToPngBuffer(readSvg(svgFile), size);
+      await writePng(`${baseName}-${size}.png`, buf);
+      const meta = await sharp(buf).metadata();
+      const jpgCanvas = await sharp({
+        create: { width: meta.width, height: meta.height, channels: 3, background: bg },
+      })
+        .composite([{ input: buf, gravity: "centre" }])
+        .jpeg({ quality: 92, mozjpeg: true })
+        .toBuffer();
+      await writeJpg(`${baseName}-${size}.jpg`, jpgCanvas);
+    }
+  }
+
   // Social / profile squares
   await exportProfile({
     svgFile: "dabarli-symbol-dark.svg",
@@ -189,7 +209,7 @@ async function main() {
     markWidthRatio: 0.58,
   });
 
-  // Stacked lockup (square-ish vertical)
+  // Stacked lockups — Latin light + Arabic dark master SVGs
   for (const size of PROFILE_SIZES) {
     const markW = Math.round(size * 0.42);
     const markPng = renderSvgToPngBuffer(readSvg("dabarli-symbol-light.svg"), markW);
@@ -209,22 +229,31 @@ async function main() {
       await sharp(stacked).jpeg({ quality: 92 }).toBuffer()
     );
 
-    const markDark = renderSvgToPngBuffer(readSvg("dabarli-symbol-dark.svg"), markW);
-    const svgDark = `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
-  <rect width="100%" height="100%" fill="${COLORS.night}"/>
-  <text x="50%" y="${Math.round(size * 0.72)}" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="${Math.round(size * 0.11)}" font-weight="700" fill="#FFFFFF">Dabarli</text>
-</svg>`;
-    const textDark = renderSvgToPngBuffer(svgDark, size);
-    const stackedDark = await sharp(textDark)
-      .composite([{ input: markDark, top: Math.round(size * 0.22), left: Math.round((size - markW) / 2) }])
-      .png()
-      .toBuffer();
-    await writePng(`dabarli-lockup-stacked-dark-${size}.png`, stackedDark);
-    await writeJpg(
-      `dabarli-lockup-stacked-dark-${size}.jpg`,
-      await sharp(stackedDark).jpeg({ quality: 92 }).toBuffer()
-    );
+    // Dark stacked = Arabic wordmark (outlined master). Matches guidelines preview.
+    const arStacked = path.join(SVG, "dabarli-lockup-stacked-ar-dark.svg");
+    if (fs.existsSync(arStacked)) {
+      const darkBuf = renderSvgToPngBuffer(readSvg("dabarli-lockup-stacked-ar-dark.svg"), size);
+      await writePng(`dabarli-lockup-stacked-dark-${size}.png`, darkBuf);
+      await writeJpg(
+        `dabarli-lockup-stacked-dark-${size}.jpg`,
+        await sharp(darkBuf).jpeg({ quality: 92 }).toBuffer()
+      );
+      await writePng(`dabarli-lockup-stacked-ar-dark-${size}.png`, darkBuf);
+      await writeJpg(
+        `dabarli-lockup-stacked-ar-dark-${size}.jpg`,
+        await sharp(darkBuf).jpeg({ quality: 92 }).toBuffer()
+      );
+    }
+
+    const arLight = path.join(SVG, "dabarli-lockup-stacked-ar-light.svg");
+    if (fs.existsSync(arLight)) {
+      const lightBuf = renderSvgToPngBuffer(readSvg("dabarli-lockup-stacked-ar-light.svg"), size);
+      await writePng(`dabarli-lockup-stacked-ar-light-${size}.png`, lightBuf);
+      await writeJpg(
+        `dabarli-lockup-stacked-ar-light-${size}.jpg`,
+        await sharp(lightBuf).jpeg({ quality: 92 }).toBuffer()
+      );
+    }
   }
 
   console.log("done");
