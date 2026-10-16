@@ -80,17 +80,42 @@
       font-size: 12px; font-weight: 700; letter-spacing: 0.16em;
       text-transform: uppercase; color: var(--leaf-deep); margin-bottom: 18px;
     }
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(48px, 9vw, 88px);
-      font-weight: 800; letter-spacing: -0.04em; line-height: 0.95;
+    .hero-title {
       margin: 0 0 18px;
       animation: rise 800ms cubic-bezier(.2,.8,.2,1) both;
     }
+    .hero-title .ar {
+      display: block;
+      font-family: var(--font-arabic);
+      font-size: clamp(52px, 10vw, 92px);
+      font-weight: 800;
+      letter-spacing: 0;
+      line-height: 1;
+      color: var(--leaf-deep);
+      direction: rtl;
+    }
+    .hero-title .lat {
+      display: block;
+      margin-top: 10px;
+      font-family: var(--font-body);
+      font-size: clamp(22px, 3.2vw, 32px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--ink);
+    }
     .hero-lead {
       font-size: clamp(16px, 2.2vw, 20px);
-      color: var(--slate); max-width: 40ch; margin: 0 0 28px;
+      color: var(--slate); max-width: 42ch; margin: 0 0 28px;
       animation: rise 950ms cubic-bezier(.2,.8,.2,1) both;
+    }
+    .hero-lead[lang="ar"] {
+      font-family: var(--font-arabic);
+      font-weight: 700;
+      letter-spacing: 0;
+      direction: rtl;
+      text-align: start;
+      line-height: 1.6;
     }
     .hero-mark-stage {
       position: relative;
@@ -327,7 +352,7 @@
     @media (prefers-reduced-motion: reduce) {
       .hero-mark-stage .half-left,
       .hero-mark-stage .half-right,
-      .hero h1, .hero-lead, .cta-row,
+      .hero-title, .hero-lead, .cta-row,
       .clearspace-frame,
       .theme-swap .layer-light,
       .theme-swap .layer-dark {
@@ -426,15 +451,18 @@
 
   <main class="container">
     <header class="hero">
-      <p class="eyebrow">Brand Identity Guidelines · v1.1 · October 2026</p>
-      <div class="hero-mark-stage" aria-label="Dabarli mark">
+      <p class="eyebrow">دليل الهوية · v1.1 · أكتوبر 2026</p>
+      <div class="hero-mark-stage" aria-label="علامة دبرلي">
         <img class="half-left" src="svg/dabarli-symbol-light.svg" alt="" />
         <img class="half-right" src="svg/dabarli-symbol-light.svg" alt="" />
       </div>
-      <h1>Dabarli</h1>
-      <p class="hero-lead">
-        Two people side by side — opportunity meets effort. The mark is the marketplace:
-        workers and providers, connected.
+      <h1 class="hero-title">
+        <span class="ar">دبرلي</span>
+        <span class="lat">Dabarli</span>
+      </h1>
+      <p class="hero-lead" lang="ar">
+        زوز عباد كتف في كتف — الفرصة تلاقي الجهد. العلامة هي السوق:
+        خدّام ومشغّل، مربوطين.
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="png/dabarli-lockup-horizontal-light-1024.png" download>PNG 1024 lockup</a>
@@ -569,9 +597,7 @@
         </article>
         <article class="tile">
           <div class="tile-stage bg-mist" style="min-height:220px">
-            <div style="width:120px;height:120px;border-radius:28px;background:#fff;border:1px solid var(--border);display:grid;place-items:center">
-              <img src="svg/dabarli-symbol-light.svg" alt="" style="width:72px" />
-            </div>
+            <img src="png/dabarli-profile-light-512.png" alt="Profile light" style="width:120px;height:120px;border-radius:28px;object-fit:cover" />
           </div>
           <div class="tile-meta">
             <h3>Profile — light</h3>
@@ -586,9 +612,7 @@
         </article>
         <article class="tile">
           <div class="tile-stage bg-leaf" style="min-height:220px">
-            <div style="width:120px;height:120px;border-radius:28px;background:rgba(255,255,255,0.08);display:grid;place-items:center">
-              <img src="svg/dabarli-mark-on-leaf.svg" alt="" style="width:72px" />
-            </div>
+            <img src="png/dabarli-profile-leaf-512.png" alt="Profile Leaf" style="width:120px;height:120px;border-radius:28px;object-fit:cover" />
           </div>
           <div class="tile-meta">
             <h3>Profile — Leaf</h3>
