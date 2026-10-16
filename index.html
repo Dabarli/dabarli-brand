@@ -57,8 +57,15 @@
       max-width: 1080px; margin: 0 auto; padding: 14px 28px;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
     }
-    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; color: var(--ink); }
     .nav-brand img { width: 28px; height: 22px; }
+    .nav-brand span[lang="ar"] {
+      font-family: var(--font-arabic);
+      font-size: 18px;
+      letter-spacing: 0;
+      color: var(--leaf-deep);
+      direction: rtl;
+    }
     .nav-links { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; font-weight: 600; color: var(--slate); }
     .nav-links a { text-decoration: none; }
     .nav-links a:hover { color: var(--leaf-deep); }
@@ -82,10 +89,6 @@
     }
     .hero-title {
       margin: 0 0 18px;
-      animation: rise 800ms cubic-bezier(.2,.8,.2,1) both;
-    }
-    .hero-title .ar {
-      display: block;
       font-family: var(--font-arabic);
       font-size: clamp(52px, 10vw, 92px);
       font-weight: 800;
@@ -93,16 +96,7 @@
       line-height: 1;
       color: var(--leaf-deep);
       direction: rtl;
-    }
-    .hero-title .lat {
-      display: block;
-      margin-top: 10px;
-      font-family: var(--font-body);
-      font-size: clamp(22px, 3.2vw, 32px);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      color: var(--ink);
+      animation: rise 800ms cubic-bezier(.2,.8,.2,1) both;
     }
     .hero-lead {
       font-size: clamp(16px, 2.2vw, 20px);
@@ -435,7 +429,7 @@
     <div class="nav-inner">
       <a class="nav-brand" href="#">
         <img src="svg/dabarli-symbol-light.svg" alt="" />
-        <span>Dabarli Brand</span>
+        <span lang="ar">دبرلي</span>
       </a>
       <div class="nav-links">
         <a href="#idea">Idea</a>
@@ -456,17 +450,14 @@
         <img class="half-left" src="svg/dabarli-symbol-light.svg" alt="" />
         <img class="half-right" src="svg/dabarli-symbol-light.svg" alt="" />
       </div>
-      <h1 class="hero-title">
-        <span class="ar">دبرلي</span>
-        <span class="lat">Dabarli</span>
-      </h1>
+      <h1 class="hero-title" lang="ar">دبرلي</h1>
       <p class="hero-lead" lang="ar">
         زوز عباد كتف في كتف — الفرصة تلاقي الجهد. العلامة هي السوق:
         خدّام ومشغّل، مربوطين.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="png/dabarli-lockup-horizontal-light-1024.png" download>PNG 1024 lockup</a>
-        <a class="btn btn-ghost" href="jpg/dabarli-profile-dark-1024.jpg" download>JPG profile</a>
+        <a class="btn btn-primary" href="png/dabarli-lockup-horizontal-ar-light-1024.png" download>PNG lockup · دبرلي</a>
+        <a class="btn btn-ghost" href="svg/dabarli-symbol-light.svg" download>SVG symbol</a>
         <a class="btn btn-ghost" href="#assets">All assets</a>
       </div>
     </header>
@@ -487,7 +478,7 @@
           <ul class="rules do">
             <li>Green is the only brand hue — light and dark modes share one palette</li>
             <li>Blue is retired from identity (legacy assets must be replaced)</li>
-            <li>Arabic wordmark <strong>دبرلي</strong> sits under the mark on splash, or beside it in product headers</li>
+            <li>Approved logos: <strong>symbol alone</strong>, or symbol + Arabic wordmark <strong>دبرلي</strong> — never Latin “Dabarli” as a logo</li>
           </ul>
         </div>
         <div class="clearspace-live" aria-label="Clear space around the mark">
@@ -630,49 +621,48 @@
 
     <section class="section" id="lockups">
       <p class="kicker">04 — Lockups</p>
-      <h2>Symbol, horizontal, stacked</h2>
-      <p class="muted">Gap between mark and wordmark ≈ half the mark height. Baseline shared on an 8px grid.</p>
+      <h2>Symbol alone, or symbol + دبرلي</h2>
+      <p class="muted">
+        The only wordmark is Arabic <strong>دبرلي</strong>. Gap between mark and wordmark ≈ half the mark height.
+        Never set Latin “Dabarli” as a logo.
+      </p>
 
-      <div class="theme-swap" style="margin:18px 0 8px" aria-label="Light and dark lockup color roles">
+      <div class="theme-swap" style="margin:18px 0 8px" aria-label="Light and dark Arabic lockup color roles">
         <div class="layer layer-light">
-          <img class="lockup-img" src="svg/dabarli-lockup-horizontal-light.svg" alt="Horizontal light lockup" style="height:48px;width:auto" />
+          <img class="lockup-img" src="svg/dabarli-lockup-horizontal-ar-light.svg" alt="Horizontal Arabic light" style="height:48px;width:auto" />
         </div>
         <div class="layer layer-dark">
-          <img class="lockup-img" src="svg/dabarli-lockup-horizontal-dark.svg" alt="Horizontal dark lockup" style="height:48px;width:auto" />
+          <img class="lockup-img" src="svg/dabarli-lockup-horizontal-ar-dark.svg" alt="Horizontal Arabic dark" style="height:48px;width:auto" />
         </div>
       </div>
-      <p class="small muted" style="margin-bottom:18px">Light ↔ dark — mark carries Leaf; wordmark is Leaf Deep on Mist, white on Night.</p>
+      <p class="small muted" style="margin-bottom:18px">Light ↔ dark — mark carries Leaf; دبرلي is Leaf Deep on Mist, white on Night.</p>
 
       <div class="grid grid-2" style="margin-top:8px">
         <article class="tile">
           <div class="tile-stage bg-mist">
-            <img class="lockup-img" src="svg/dabarli-lockup-horizontal-light.svg" alt="Horizontal light" style="height:44px;width:auto" />
+            <img class="mark mark-lg" src="svg/dabarli-symbol-light.svg" alt="Symbol light" />
           </div>
           <div class="tile-meta">
-            <h3>Horizontal — light</h3>
-            <p>Websites, dashboards, docs, email</p>
+            <h3>Symbol — light</h3>
+            <p>App icon, favicon, avatar — mark only</p>
             <div class="download-row">
-              <a class="download leaf" href="svg/dabarli-lockup-horizontal-light.svg" download>SVG</a>
-              <a class="download png" href="png/dabarli-lockup-horizontal-light-512.png" download>PNG 512</a>
-              <a class="download png" href="png/dabarli-lockup-horizontal-light-1024.png" download>PNG 1024</a>
-              <a class="download jpg" href="jpg/dabarli-lockup-horizontal-light-512.jpg" download>JPG 512</a>
-              <a class="download jpg" href="jpg/dabarli-lockup-horizontal-light-1024.jpg" download>JPG 1024</a>
+              <a class="download leaf" href="svg/dabarli-symbol-light.svg" download>SVG</a>
+              <a class="download png" href="png/dabarli-mark-light-512.png" download>PNG 512</a>
+              <a class="download png" href="png/dabarli-mark-light-1024.png" download>PNG 1024</a>
             </div>
           </div>
         </article>
         <article class="tile">
           <div class="tile-stage bg-night">
-            <img class="lockup-img" src="svg/dabarli-lockup-horizontal-dark.svg" alt="Horizontal dark" style="height:44px;width:auto" />
+            <img class="mark mark-lg" src="svg/dabarli-symbol-dark.svg" alt="Symbol dark" />
           </div>
           <div class="tile-meta">
-            <h3>Horizontal — dark</h3>
-            <p>Leaf mark + white wordmark</p>
+            <h3>Symbol — dark</h3>
+            <p>Night UI · splash · social avatar</p>
             <div class="download-row">
-              <a class="download leaf" href="svg/dabarli-lockup-horizontal-dark.svg" download>SVG</a>
-              <a class="download png" href="png/dabarli-lockup-horizontal-dark-512.png" download>PNG 512</a>
-              <a class="download png" href="png/dabarli-lockup-horizontal-dark-1024.png" download>PNG 1024</a>
-              <a class="download jpg" href="jpg/dabarli-lockup-horizontal-dark-512.jpg" download>JPG 512</a>
-              <a class="download jpg" href="jpg/dabarli-lockup-horizontal-dark-1024.jpg" download>JPG 1024</a>
+              <a class="download leaf" href="svg/dabarli-symbol-dark.svg" download>SVG</a>
+              <a class="download png" href="png/dabarli-mark-dark-512.png" download>PNG 512</a>
+              <a class="download png" href="png/dabarli-mark-dark-1024.png" download>PNG 1024</a>
             </div>
           </div>
         </article>
@@ -681,7 +671,7 @@
             <img class="lockup-img" src="svg/dabarli-lockup-horizontal-ar-light.svg" alt="Horizontal Arabic light" style="height:44px;width:auto" />
           </div>
           <div class="tile-meta">
-            <h3>Horizontal — Arabic / light</h3>
+            <h3>Horizontal — دبرلي / light</h3>
             <p>Product headers · RTL · outlined دبرلي</p>
             <div class="download-row">
               <a class="download leaf" href="svg/dabarli-lockup-horizontal-ar-light.svg" download>SVG</a>
@@ -697,7 +687,7 @@
             <img class="lockup-img" src="svg/dabarli-lockup-horizontal-ar-dark.svg" alt="Horizontal Arabic dark" style="height:44px;width:auto" />
           </div>
           <div class="tile-meta">
-            <h3>Horizontal — Arabic / dark</h3>
+            <h3>Horizontal — دبرلي / dark</h3>
             <p>Dark UI · Leaf mark · white دبرلي</p>
             <div class="download-row">
               <a class="download leaf" href="svg/dabarli-lockup-horizontal-ar-dark.svg" download>SVG</a>
@@ -709,20 +699,18 @@
           </div>
         </article>
         <article class="tile">
-          <div class="tile-stage bg-mist">
-            <div class="lockup-stacked">
-              <img src="svg/dabarli-symbol-light.svg" alt="" style="width:72px" />
-              <span class="wordmark" style="color:var(--leaf-deep);font-size:28px">Dabarli</span>
-            </div>
+          <div class="tile-stage bg-mist" style="padding:0;overflow:hidden">
+            <img class="lockup-img" src="svg/dabarli-lockup-stacked-ar-light.svg" alt="Stacked Arabic light" style="width:160px;height:auto" />
           </div>
           <div class="tile-meta">
-            <h3>Stacked — light</h3>
-            <p>Square placements, posters, splash alternatives</p>
+            <h3>Stacked — دبرلي / light</h3>
+            <p>Square placements, posters, splash</p>
             <div class="download-row">
-              <a class="download png" href="png/dabarli-lockup-stacked-light-512.png" download>PNG 512</a>
-              <a class="download png" href="png/dabarli-lockup-stacked-light-1024.png" download>PNG 1024</a>
-              <a class="download jpg" href="jpg/dabarli-lockup-stacked-light-512.jpg" download>JPG 512</a>
-              <a class="download jpg" href="jpg/dabarli-lockup-stacked-light-1024.jpg" download>JPG 1024</a>
+              <a class="download leaf" href="svg/dabarli-lockup-stacked-ar-light.svg" download>SVG</a>
+              <a class="download png" href="png/dabarli-lockup-stacked-ar-light-512.png" download>PNG 512</a>
+              <a class="download png" href="png/dabarli-lockup-stacked-ar-light-1024.png" download>PNG 1024</a>
+              <a class="download jpg" href="jpg/dabarli-lockup-stacked-ar-light-512.jpg" download>JPG 512</a>
+              <a class="download jpg" href="jpg/dabarli-lockup-stacked-ar-light-1024.jpg" download>JPG 1024</a>
             </div>
           </div>
         </article>
@@ -731,20 +719,20 @@
             <img class="lockup-img" src="svg/dabarli-lockup-stacked-ar-dark.svg" alt="Stacked Arabic dark" style="width:160px;height:auto" />
           </div>
           <div class="tile-meta">
-            <h3>Stacked — dark / Arabic</h3>
-            <p>Night · Leaf mark · outlined دبرلي · accent line</p>
+            <h3>Stacked — دبرلي / dark</h3>
+            <p>Night · Leaf mark · outlined دبرلي</p>
             <div class="download-row">
               <a class="download leaf" href="svg/dabarli-lockup-stacked-ar-dark.svg" download>SVG</a>
-              <a class="download png" href="png/dabarli-lockup-stacked-dark-512.png" download>PNG 512</a>
-              <a class="download png" href="png/dabarli-lockup-stacked-dark-1024.png" download>PNG 1024</a>
-              <a class="download jpg" href="jpg/dabarli-lockup-stacked-dark-512.jpg" download>JPG 512</a>
-              <a class="download jpg" href="jpg/dabarli-lockup-stacked-dark-1024.jpg" download>JPG 1024</a>
+              <a class="download png" href="png/dabarli-lockup-stacked-ar-dark-512.png" download>PNG 512</a>
+              <a class="download png" href="png/dabarli-lockup-stacked-ar-dark-1024.png" download>PNG 1024</a>
+              <a class="download jpg" href="jpg/dabarli-lockup-stacked-ar-dark-512.jpg" download>JPG 512</a>
+              <a class="download jpg" href="jpg/dabarli-lockup-stacked-ar-dark-1024.jpg" download>JPG 1024</a>
             </div>
           </div>
         </article>
       </div>
       <p class="small muted" style="margin-top:16px">
-        On light lockups the wordmark is Leaf Deep. On dark lockups the wordmark is white — only the symbol carries Leaf.
+        On light lockups دبرلي is Leaf Deep. On dark lockups دبرلي is white — only the symbol carries Leaf.
         Arabic masters are outlined paths so they render without a font.
       </p>
     </section>
@@ -753,27 +741,28 @@
       <p class="kicker">05 — Typography</p>
       <h2>Geometric, friendly, clear</h2>
       <p>
-        Product UI uses the app type stack. This guide uses <strong>Syne</strong> for display titles,
-        <strong>Manrope</strong> for Latin body and the Latin wordmark, and <strong>Cairo</strong> for Arabic display.
+        The brand wordmark is <strong>دبرلي</strong> only (Cairo / outlined masters).
+        <strong>Syne</strong> is for English display titles in this guide;
+        <strong>Manrope</strong> for Latin UI body — not for a Latin logo.
       </p>
       <ul class="rules do">
-        <li>Wordmark casing is sentence case: <em>Dabarli</em> — never all-caps</li>
-        <li>Keep Latin and Arabic wordmarks visually balanced; don’t stretch either</li>
+        <li>Logo text is always <strong>دبرلي</strong> — never Latin “Dabarli” as a wordmark</li>
         <li>Arabic letter-spacing stays at 0 — never track out دبرلي</li>
+        <li>Don’t stretch or redraw the outlined wordmark paths</li>
         <li>UI weights 400–700; headlines may use 800</li>
       </ul>
       <div class="type-grid">
         <div class="type-card">
-          <div style="font-family:var(--font-display);font-weight:800;font-size:42px;letter-spacing:-0.03em">Dabarli</div>
-          <div class="muted small" style="margin-top:6px">Display — Syne 800</div>
-          <div style="font-family:var(--font-body);font-weight:700;font-size:28px;margin-top:22px;letter-spacing:-0.02em">Find work. Offer work. Move.</div>
-          <div class="muted small" style="margin-top:6px">Body / UI — Manrope 400–700</div>
-        </div>
-        <div class="type-card">
           <div class="specimen-ar">دبرلي</div>
-          <div class="muted small" style="margin-top:6px">Arabic wordmark — Cairo 800</div>
+          <div class="muted small" style="margin-top:6px">Wordmark — Cairo 800 / outlined SVG</div>
           <div class="specimen-ar" style="font-size:32px;margin-top:22px;color:var(--ink)">تتدبّر</div>
           <div class="muted small" style="margin-top:6px">Arabic display — Cairo 800</div>
+        </div>
+        <div class="type-card">
+          <div style="font-family:var(--font-display);font-weight:800;font-size:36px;letter-spacing:-0.03em">Find work. Offer work.</div>
+          <div class="muted small" style="margin-top:6px">Display titles — Syne 800 (UI copy only)</div>
+          <div style="font-family:var(--font-body);font-weight:700;font-size:22px;margin-top:22px;letter-spacing:-0.02em">Move faster together.</div>
+          <div class="muted small" style="margin-top:6px">Body / UI — Manrope 400–700</div>
         </div>
       </div>
     </section>
@@ -787,7 +776,7 @@
       </p>
       <div class="pair-note">
         <strong>Pairings:</strong> Leaf Deep for text &amp; CTAs on Mist/Paper · Leaf for marks on Night ·
-        white wordmark on Night · never use Leaf as small UI text on Mist (contrast is too weak).
+        white دبرلي on Night · never use Leaf as small UI text on Mist (contrast is too weak).
       </div>
       <div class="grid grid-3" style="margin-top:22px">
         <div class="swatch">
@@ -891,6 +880,12 @@
       <div class="grid grid-4" style="margin-top:22px">
         <article class="tile">
           <div class="tile-stage bg-mist"><span class="badge">✕</span>
+            <div style="font-family:var(--font-body);font-weight:800;font-size:28px;letter-spacing:-0.03em;color:var(--leaf-deep)">Dabarli</div>
+          </div>
+          <div class="tile-meta"><h3>Latin wordmark</h3><p>Logo text is دبرلي only</p></div>
+        </article>
+        <article class="tile">
+          <div class="tile-stage bg-mist"><span class="badge">✕</span>
             <img class="mark fx-blue" src="svg/dabarli-mark.svg" alt="" style="width:72px;color:#0860B0" />
           </div>
           <div class="tile-meta"><h3>Blue / old colors</h3><p>Green identity only</p></div>
@@ -964,10 +959,8 @@
           <tr><td><code class="inline">svg/dabarli-*.svg</code></td><td>Vector masters (scale freely)</td></tr>
           <tr><td><code class="inline">png/dabarli-mark-*-{256,512,1024}.png</code></td><td>Transparent mark rasters</td></tr>
           <tr><td><code class="inline">jpg/dabarli-mark-*-{256,512,1024}.jpg</code></td><td>Marks on solid brand backgrounds</td></tr>
-          <tr><td><code class="inline">png|jpg/dabarli-lockup-horizontal-*-{256,512,1024}.*</code></td><td>Horizontal lockups (Latin)</td></tr>
-          <tr><td><code class="inline">svg|png|jpg/dabarli-lockup-horizontal-ar-*</code></td><td>Horizontal Arabic lockups</td></tr>
-          <tr><td><code class="inline">png|jpg/dabarli-lockup-stacked-*-{512,1024}.*</code></td><td>Stacked lockups (Latin light / Arabic dark)</td></tr>
-          <tr><td><code class="inline">svg/dabarli-lockup-stacked-ar-*.svg</code></td><td>Stacked Arabic masters (outlined)</td></tr>
+          <tr><td><code class="inline">svg|png|jpg/dabarli-lockup-horizontal-ar-*</code></td><td>Horizontal lockups (symbol + دبرلي)</td></tr>
+          <tr><td><code class="inline">svg|png|jpg/dabarli-lockup-stacked-ar-*</code></td><td>Stacked lockups (symbol + دبرلي)</td></tr>
           <tr><td><code class="inline">png|jpg/dabarli-profile-*-{512,1024}.*</code></td><td>Social profile squares</td></tr>
           <tr><td><code class="inline">png/dabarli-app-icon-{512,1024}.png</code></td><td>App / social icon</td></tr>
           <tr><td><code class="inline">png/dabarli-favicon-{32,64,128,256}.png</code></td><td>Favicon sizes</td></tr>
@@ -987,7 +980,7 @@
     </section>
 
     <footer>
-      <div>© Dabarli · Brand Identity Guidelines v1.1</div>
+      <div lang="ar">© دبرلي · دليل الهوية v1.1</div>
       <div>
         Inspired in structure by
         <a href="https://ladstv.github.io/ladstv-brand/" target="_blank" rel="noreferrer">LADS TV brand</a>
